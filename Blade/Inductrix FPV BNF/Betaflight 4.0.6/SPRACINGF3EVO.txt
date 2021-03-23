@@ -1,0 +1,110 @@
+Configurator: 10.7.0
+Firmware: BTFL 4.0.6
+Target: SPRACINGF3EVO
+DisconnectUpdate Firmware
+No dataflash
+chip found
+ Enable Expert Mode
+Gyro
+Accel
+Mag
+Baro
+GPS
+Sonar
+ 4.65V (2S)
+Show Log
+2021-03-22 @ 15:24:22 -- Running - OS: Windows, Chrome: 80.0.3987.116, Configurator: 10.7.0
+2021-03-22 @ 15:24:24 -- GitHub query for configurator releases failed, using cached information. Reason:
+2021-03-22 @ 15:24:33 -- Serial port successfully opened with ID: 1
+2021-03-22 @ 15:25:22 -- MultiWii API version: 1.41.0
+2021-03-22 @ 15:25:24 -- Flight controller info, identifier: BTFL, version: 4.0.6
+2021-03-22 @ 15:25:24 -- Running firmware released on: Sep 1 2019 01:06:10
+2021-03-22 @ 15:25:24 -- Board: SPRACINGF3EVO, version: 0
+2021-03-22 @ 15:25:25 -- Unique device ID: 0x1f00285833571320333536
+2021-03-22 @ 15:25:25 -- Craft name:
+2021-03-22 @ 15:25:25 -- Arming Disabled
+2021-03-22 @ 15:25:32 -- CLI mode detected
+2021-03-22 @ 15:27:07 -- CLI reboot detected
+2021-03-22 @ 15:27:07 -- Device - Rebooting
+
+
+CLI
+
+# diff
+# Betaflight / SPRACINGF3EVO (SPEV) 4.0.6 Sep  1 2019 / 01:06:10 (2a64051a2) MSP API: 1.41 / FEATURE CUT LEVEL 8
+batch start
+name RCwhoopi
+mixer CUSTOM
+mmix 0  1.000 -1.000  1.000 -1.000
+mmix 1  1.000 -1.000 -1.000  1.000
+mmix 2  1.000  1.000  1.000  1.000
+mmix 3  1.000  1.000 -1.000 -1.000
+
+feature -TELEMETRY
+feature -RSSI_ADC
+feature -TRANSPONDER
+feature -AIRMODE
+feature MOTOR_STOP
+beeper -GYRO_CALIBRATED
+beeper -RX_LOST
+beeper -RX_LOST_LANDING
+beeper -DISARMING
+beeper -ARMING
+beeper -ARMING_GPS_FIX
+beeper -BAT_CRIT_LOW
+beeper -BAT_LOW
+beeper -GPS_STATUS
+beeper -RX_SET
+beeper -ACC_CALIBRATION
+beeper -ACC_CALIBRATION_FAIL
+beeper -READY_BEEP
+beeper -DISARM_REPEAT
+beeper -ARMED
+beeper -SYSTEM_INIT
+beeper -ON_USB
+beeper -BLACKBOX_ERASE
+beeper -CRASH_FLIP
+beeper -CAM_CONNECTION_OPEN
+beeper -CAM_CONNECTION_CLOSE
+beeper -RC_SMOOTHING_INIT_FAIL
+map TAER1234
+serial 0 1 115200 57600 0 115200
+aux 0 0 0 900 1200 0 0
+aux 1 1 1 900 1200 0 0
+aux 2 2 1 1300 1700 0 0
+aux 3 28 1 1300 2100 0 0
+rxrange 0 1149 1823
+rxrange 1 1149 1823
+rxrange 2 1149 1823
+rxrange 3 1149 1822
+set gyro_lowpass_type = PT1
+set gyro_notch1_cutoff = 300
+set gyro_notch2_cutoff = 100
+set mag_hardware = NONE
+set baro_hardware = NONE
+set min_check = 1020
+set max_check = 1980
+set max_aux_channels = 6
+set blackbox_device = NONE
+set min_throttle = 1049
+set use_unsynced_pwm = OFF
+set motor_pwm_rate = 4000
+set failsafe_delay = 2
+set failsafe_off_delay = 0
+set pid_process_denom = 1
+profile 0
+
+set dterm_notch_hz = 260
+set dterm_notch_cutoff = 160
+set pidsum_limit = 700
+set p_pitch = 80
+set i_pitch = 80
+set d_pitch = 30
+set p_roll = 70
+set i_roll = 70
+set p_yaw = 180
+set i_yaw = 45
+rateprofile 0
+
+set tpa_rate = 10
+set tpa_breakpoint = 1650

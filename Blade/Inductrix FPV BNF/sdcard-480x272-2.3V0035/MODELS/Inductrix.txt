@@ -1,0 +1,84 @@
+FrSky Horus X10S 2.4GHz 16CH
+
+
+Sliders, switches n pots
+   SF                                       SH
+  SE                                         SG
+   SA,SB                        SC,SD
+LS         S1 M-POS S2         RS
+
+Inductrix
+
+Stickyswitch arming (SF+SH)
+Flightmodes  angelmode, horizionmode, acromode (SE)
+
+Timers Time        Switch Countdown Min.call
+Tmr1    00:03:15 L04        Voice             Yes
+
+Inputs
+I1:Thr Thr Weight(+100%)
+I2:Ail Ail Weight(+100%)
+I3:Ele Ele Weight(+100%)
+I4:Rud Rud Weight(+100%)
+
+Mixers
+CH1:Rol I2:Ail Weight(+100%)
+CH2:Pit I3:Ele Weight(+100%)
+CH3:Thr I1:Thr Weight(+100%)
+CH4:Yaw I4:Rud Weight(+100%)
+CH5:Arm MAX Weight(+100%) Switch(!L04) [disarm]
+        += MAX Weight(-100%) Switch(L04) [arm]
+CH6:Fmd SE Weight(+100%)
+
+Outputs
+Channel Subtrim Min     Max     Direct
+CH1:Rol -0.3%   -100.0% +100.0% NOR
+CH2:Pit -2.3%   -100.0% +100.0% NOR
+CH3:Thr +0.0%   -100.0% +100.0% NOR
+CH4:Yaw +0.0%   -100.0% +100.0% NOR
+CH5:Arm +0.0%   -100.0% +100.0% NOR
+CH6:Fmd +0.0%   -100.0% +100.0% NOR
+
+Logical Switches
+L1 ( Edge(SH, [0.6:0.6]) ) AND SF Duration(0.1s)
+L2 I1:Thr < -99
+L3 L01 AND L02
+L4 Sticky(L03, SF)
+L5 ( L02 AND SF ) AND SH
+
+Global Functions
+GF1 ON   - Volume (S2)
+GF2 ON   - Backlight (S1)
+GF6 6P_4 - SD Logs (0.2s)
+
+Special Functions
+SF1 !L04 - Play Track (disarm)
+SF2 L04  - Play Track (arm)
+SF3 SE   - Play Track (anglmd)
+SF4 SE-  - Play Track (hrznmd)
+SF5 SE   - Play Track (acromd)
+SF6 L05  - Play Sound (Beep 1)
+SF7 L05  - Reset (Timer1)
+
+
+FrSky FIRMWARE - FrOS & iXJT 2019-12-11 1.3.06
+
+OpenTX 2.3.11 (2021-01-08)
+
+iRangeX IRX4 Plus 2.4G CC2500 NRF24L01 A7105
+CYRF6936 4 IN 1 Multiprotocol STM32 TX Module
+With Case
+
+Multiprotocol v1.3.2.61 2021-03-14 - Transmitter Protocol
+
+Nam Num Sub0 Sub1 Sub2 Sub3 Sub4 Sub5 Sub6 Sub7
+
+DSM 6 DSM2_1F DSM2_2F DSMX_1F DSMX_2F AUTO
+
+Futaba/SFHSS 21 SFHSS
+
+Flysky AFHDS2A 28 PWM_IBUS PPM_IBUS PWM_SBUS PPM_SBUS
+PWM_IBUS16 PPM_IBUS16
+
+OMP 77
+
